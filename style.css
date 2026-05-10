@@ -583,3 +583,148 @@ html {
     0%, 100% { opacity: 0.3; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.2); }
 }
+
+/* LOGIN OVERLAY */
+#login-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f8f7f2;
+    backdrop-filter: blur(4px);
+
+    z-index: 9999;
+}
+
+/* LOGIN STARS */
+.login-star-container {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* LOGIN BOX */
+.login-box {
+    position: relative;
+    z-index: 2;
+
+    background: white;
+    width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 0.5px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* LOGIN HEADER */
+.login-header {
+    background: #333;
+    color: white;
+
+    width: 100%;
+    padding: 8px 15px;
+    box-sizing: border-box;
+
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+
+    border-bottom: 1px solid #000;
+}
+
+/* LOGIN AVATAR */
+.login-avatar {
+    width: 80px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* LOGIN TITLE */
+.login-box h2 {
+    font-size: 35px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    
+}
+
+/* PASSWORD INPUT */
+#password-input {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 10px;
+
+    border: 0.5px solid #000;
+    border-radius: 3px;
+
+    font-family: 'Gaegu', cursive;
+    padding: 8px;
+    font-size: 15px;
+}
+
+/* LOGIN BUTTON */
+.login-box button {
+    background: #2d6fa3;
+    color: white;
+
+    border: 1px solid #000;
+    border-radius: 8px;
+
+    padding: 7px 20px;
+    margin-top: 10px;
+
+    font-family: 'Gaegu', cursive;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-box button:hover {
+    background: #1e4d73;
+    transform: translate(-2px, -2px);
+}
+
+.login-box button:active {
+    transform: translate(2px, 2px);
+}
+
+/* ERROR MESSAGE */
+#error-message {
+    color: red;
+    font-size: 14px;
+    height: 20px;
+}
+
+/* LOGIN STARS STYLE */
+.login-star-container .star {
+    opacity: 0.6;
+}
+
+/* PASSWORD eye */
+.password-container {
+    position: relative;
+    width: 80%; /* Match your input width */
+    margin: 0 auto /* 15px auto*/;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 10px 40px 10px 15px; /* Space for the icon */
+    box-sizing: border-box;
+}
