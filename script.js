@@ -84,3 +84,53 @@ function stopMeow() {
     }
 }
 
+// LOGIN PASSWORD WITH CLEAR-ON-ERROR & SMOOTH FADE OUT
+function checkPassword() {
+    const passwordInput = document.getElementById("password-input");
+    const passwordValue = passwordInput.value;
+    const errorMessage = document.getElementById("error-message");
+    const overlay = document.getElementById("login-overlay");
+
+    if (passwordValue === "shimi2024") {
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 500);
+    } else {
+        errorMessage.innerText = "Access Denied. Try again! 🫧";
+        errorMessage.style.color = "red";
+        
+        // 1. CLEAR THE INPUT
+        passwordInput.value = ""; 
+        
+        // 2. REFOCUS (so they can start typing again immediately)
+        passwordInput.focus();
+    }
+}
+
+// Allow pressing "Enter" to login
+document.getElementById("password-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+});
+
+// CLOCK UPDATE FUNCTION
+function updateClock() {
+    const clock = document.getElementById("desktop-clock");
+    const now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Handle midnight (0 hours)
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    clock.innerText = `${hours}:${minutes} ${ampm}`;
+}
+
+// Initialize clock immediately and set interval
+updateClock();
+setInterval(updateClock, 1000);
