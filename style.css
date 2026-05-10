@@ -177,6 +177,29 @@ body {
 #music-icon-img:hover {
     transform: scale(1.1); /* Lifts slightly on hover */
 }
+
+/* DESKTOP CLOCK */
+#desktop-clock {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 100;
+
+    background: #f8f7f2;
+    backdrop-filter: blur(4px);
+
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    padding: 8px 16px;
+
+    font-family: 'Gaegu', cursive;
+    font-size: 18px;
+    color: #000;
+
+    user-select: none;
+}
+
 /* BACK TO TOP BUTTON */
 #backToTop {
     display: none; /* Hidden by default */
