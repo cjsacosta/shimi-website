@@ -738,16 +738,3 @@ html {
 .login-star-container .star {
     opacity: 0.6;
 }
-
-/* PASSWORD eye */
-.password-container {
-    position: relative;
-    width: 80%; /* Match your input width */
-    margin: 0 auto /* 15px auto*/;
-}
-
-.password-container input {
-    width: 100%;
-    padding-right: 10px 40px 10px 15px; /* Space for the icon */
-    box-sizing: border-box;
-}
