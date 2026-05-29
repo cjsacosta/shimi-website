@@ -1,16 +1,9 @@
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
+        behavior: "auto"
     });
 }
 
-const music = document.getElementById("bg-music");
-const btn = document.getElementById("music-btn");
-
-let isPlaying = false;
-
-
-// TOGGLE MUSIC
 function toggleMusic() {
     const music = document.getElementById("bg-music");
     const iconImg = document.getElementById("music-icon-img");
@@ -66,8 +59,6 @@ function playHoverSound() {
 
 function playMeow() {
     const sound = document.getElementById("meowSound");
-    const catImg = document.querySelector(".contact-illustration");
-
     if (sound) {
         sound.currentTime = 0; // Starts sound from the beginning
         sound.play();
@@ -76,8 +67,6 @@ function playMeow() {
 
 function stopMeow() {
     const sound = document.getElementById("meowSound");
-    const catImg = document.querySelector(".contact-illustration");
-
     if (sound) {
         sound.pause(); // Pauses the sound immediately
         sound.currentTime = 0; // Resets it to the start so it's ready for next hover
@@ -92,7 +81,10 @@ function checkPassword() {
     const overlay = document.getElementById("login-overlay");
 
     if (passwordValue === "shimi2024") {
+        document.body.classList.remove("login-active");
+        window.scrollTo(0, 0);
         overlay.style.opacity = "0";
+
         setTimeout(() => {
             overlay.style.display = "none";
         }, 500);
